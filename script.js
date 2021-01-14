@@ -10,8 +10,6 @@ function newCity(){
     citySearch();
 
 }
-
-
 function citySearch(){
     var city = $("#city").val();
     var cityFormatted = city.replaceAll(" ", "").toLowerCase();
@@ -61,6 +59,28 @@ function citySearch(){
         $("h3").append(icon);
 
     //5-DAY Forecast
+    // api.openweathermap.org/data/2.5/forecast?q=
+    var queryURL5 = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityFormatted+ "&appid=" + APIKey; 
+    $.ajax({
+        url: queryURL5,
+        method: "GET"
+    })
+
+        .then(function(response) {
+
+        console.log(response);
+        // var date = 
+        
+        })
+
+    
+        // http://openweathermap.org/img/wn/10d@2x.png
+        // var queryURLIcon = "http://openweathermap.org/img/wn/10d@2x.png";
+        // var icon = $("<img>");
+        // icon.attr("src", queryURLIcon);
+        // $("h3").append(icon);
+
+
 
 }
 
