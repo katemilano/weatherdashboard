@@ -26,3 +26,15 @@ h4{
     margin: 30px;
     padding: 10px;
 }
+
+.box{
+    background: blue;
+    padding: 10px;;
+    margin: 10px;
+    width: 140px;
+    color: white;
+    float:left; 
+    height:215px;  
+    font-size: 15px;
+
+}
