@@ -38,3 +38,29 @@ h4{
     font-size: 15px;
 
 }
+
+.cityB{
+    width: 100%;
+    padding: 8px;
+    border: 3px rgb(223, 221, 221);
+    background: white;
+    color:  rgb(68, 68, 68);
+    margin: 2px;
+
+}
+
+.uv{
+ 
+    padding: 0;
+    margin: 0;
+    display: inline;
+    color:white;
+}
+
+#indexUV{
+    padding: 0;
+    margin: 0;
+    display: inline;
+
+
+}
