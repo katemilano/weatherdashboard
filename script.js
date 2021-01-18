@@ -1,7 +1,9 @@
+////////////// Global Variable
 var APIKey = "f7ea35904ff1a410ebfcbeb0592c0992"
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?"
 var city = $("#city");
 
+//////Inital page
 function start(){
 $(".weatherpanel").hide();
 $("#5daytitle").hide();
@@ -9,6 +11,7 @@ $("#forecast").hide();
 $(".cityB").remove();
 }
 
+//////City Buttons Inputs Value
 function sideButton(){
     var city = $(this).text();
 
@@ -17,24 +20,25 @@ function sideButton(){
     $("#forecast").show();
     var cityFormatted = city.replaceAll(" ", "").toLowerCase();
 
-    //5 day forecast
+    //Current Forecast
     var queryURL5day = queryURL + "q=" + cityFormatted + "&appid=" + APIKey;
     $.ajax({
         url: queryURL5day,
         method: "GET"
     })
         .then(function(response) {
+          //Convert Temp
           tempConvert = response.main.temp * 9/5 - 459.67
           tempF = parseInt(tempConvert);
-
+          //Inputs City name, Temperature, Humidity, and Wind Speed
           var h3 = $("h3").text(response.name);
           $(".temp").text("Temperature: " + tempF +" F");
           $(".humidity").text("Humidity: " + response.main.humidity + " %");
           $(".wind").text("Wind Speed: " + response.wind.speed + " MPH");
-
+          //Stores Longitude and Latitude
           localStorage.setItem("lon", response.coord.lon);
           localStorage.setItem("lat", response.coord.lat);
-
+          //Adds Icon in
           var queryURLIcon = "https://openweathermap.org/img/wn/" + response.weather[0].icon + ".png";
           var icon = $("<img>");
           icon.attr("src", queryURLIcon);
@@ -42,7 +46,7 @@ function sideButton(){
 
         });
        
-    // UV INDEX
+    ////////// UV INDEX
     var storedLon = localStorage.getItem("lon");
     var storedLat = localStorage.getItem("lat");
     var queryURLUV = "https://api.openweathermap.org/data/2.5/uvi?lat=" + storedLat + "&lon=" + storedLon + "&appid=" + APIKey; 
@@ -52,8 +56,9 @@ function sideButton(){
       })
         .then(function(response) {
 
+          //Gets the UV index number
           $(".uv").text(response.value);
-           
+           //Changes the color of UV background
           if (response.value <= 2){
             $(".uv").attr("style","background:green")
           }else if (response.value <= 5 && response.value > 3) {
@@ -73,7 +78,7 @@ function sideButton(){
         icon.attr("src", queryURLIcon);
         $("h3").append(icon);
 
-    //5-DAY Forecast
+    ////////5-DAY Forecast
     var queryURL5 = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityFormatted+ "&appid=" + APIKey; 
     $.ajax({
         url: queryURL5,
@@ -112,12 +117,11 @@ function sideButton(){
         
             }); 
         })
-
-
+        //Clears any input value
     $("#city").val("");
-
 }
 
+///Creates new city button and stores the value
 function newCity(){
     var city = $("#city").val();
     var button = $("<button>");
@@ -131,8 +135,8 @@ function newCity(){
     citySearch();
 }
 
+//Searches city from inital search
 function citySearch(){
-    
     $(".weatherpanel").show();
     $("#5daytitle").show();
     $("#forecast").show();
@@ -145,18 +149,20 @@ function citySearch(){
         method: "GET"
     })
         .then(function(response) {
+          //converts temperature
           tempConvert = response.main.temp * 9/5 - 459.67
           tempF = parseInt(tempConvert);
-
+          //Inputs City Name, Temperature, Humidity, and Speed
           var h3 = $("h3").text(response.name);
           $(".temp").text("Temperature: " + tempF +" F");
           $(".humidity").text("Humidity: " + response.main.humidity + " %");
           $(".wind").text("Wind Speed: " + response.wind.speed + " MPH");
           
-          
+          //Stores Longitude and Latitude
           localStorage.setItem("lon", response.coord.lon);
           localStorage.setItem("lat", response.coord.lat);
 
+          //Icon
           var queryURLIcon = "https://openweathermap.org/img/wn/" + response.weather[0].icon + ".png";
           var icon = $("<img>");
           icon.attr("src", queryURLIcon);
@@ -173,9 +179,9 @@ function citySearch(){
         method: "GET"
       })
         .then(function(response) {
-
+          //UV Index Input
           $(".uv").text(response.value);
-
+          //Changes color background depending on value
           if (response.value <= 2){
             $(".uv").attr("style","background:green")
           }else if (response.value <= 5 && response.value > 3) {
@@ -187,7 +193,6 @@ function citySearch(){
           }else{
             $(".uv").attr("style","background:purple")
           } 
-
 
         });
        
@@ -236,7 +241,6 @@ function citySearch(){
         
             }); 
         })
-
 
     $("#city").val("");
 
@@ -244,34 +248,37 @@ function citySearch(){
 
 }
 
+//////////////Page Reloads
 $(window).on('load',function get(){
 
     $(".weatherpanel").show();
     $("#5daytitle").show();
     $("#forecast").show();
 
+    ///Gets stored value
     var city = localStorage.getItem("city");
     var cityString = city.substr(0,city.length -0);
     var cityFormatted = cityString.replaceAll(" ", "").toLowerCase();
     console.log(cityFormatted);
-    //5 day forecast
+    //Current Weather
     var queryURL5day = queryURL + "q=" + cityFormatted + "&appid=" + APIKey;
     $.ajax({
         url: queryURL5day,
         method: "GET"
     })
         .then(function(response) {
+          //Converts Temp
           tempConvert = response.main.temp * 9/5 - 459.67
           tempF = parseInt(tempConvert);
-
+          //Inputs city name, temp, humidity and wind
           var h3 = $("h3").text(response.name);
           $(".temp").text("Temperature: " + tempF +" F");
           $(".humidity").text("Humidity: " + response.main.humidity + " %");
           $(".wind").text("Wind Speed: " + response.wind.speed + " MPH");
-
+          //Stores Longitutde and Latitude
           localStorage.setItem("lon", response.coord.lon);
           localStorage.setItem("lat", response.coord.lat);
-
+          //Icons
           var queryURLIcon = "https://openweathermap.org/img/wn/" + response.weather[0].icon + ".png";
           var icon = $("<img>");
           icon.attr("src", queryURLIcon);
@@ -289,8 +296,9 @@ $(window).on('load',function get(){
       })
         .then(function(response) {
 
+          //Inputs UV value
           $(".uv").text(response.value);
-
+          //Changes UV background based on color
           if (response.value <= 2){
             $(".uv").attr("style","background:green")
           }else if (response.value <= 5 && response.value > 3) {
@@ -302,7 +310,6 @@ $(window).on('load',function get(){
           }else{
             $(".uv").attr("style","background:purple")
           } 
-
 
         });
        
@@ -318,7 +325,7 @@ $(window).on('load',function get(){
         method: "GET"
     })
         .then(function(response) {
-  
+          
         var j = 0;
             $('.box').each(function(i, obj) {
 
@@ -351,15 +358,15 @@ $(window).on('load',function get(){
         
             }); 
         })
-
-
     $("#city").val("");
 
     $("button").on('click', sideButton);
 
 });
 
-
+//Page is opened
 start();
+
+//Search Button
 $("span").click(newCity);
 

@@ -1,27 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-------------- Header ----------->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="style.css" />
     <title>Weather Dashboard</title>
   </head>
 
+  <!-------------- Body ----------->
   <body>
     <header>
       <head class="display-3">Weather Dashboard</head>
@@ -29,21 +18,21 @@
     <main class="container">
         <section>
             <section class="row">
+                  <!--------- Search Box Section ----------->
                 <section id="searchbox" class="col-md-3">
+                      <!----------- Search ----------->
                     <h4>Search for a City</h4>
                     <div id="search" class="input-group input-group-sm mb-3">
                         <input id="city" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                         <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-search"></i></span>
                     </div>
-
+                      <!------ Button List of Cities ------->
                     <div>
                         <div id="allcities">
-                          <!-- <button class="cityB">kansas</button> -->
                         </div>
-
                     </div>
                 </section>
-
+                <!-------Weather Panel Section ----------->
                 <section class="col-md-8">
                     <div class="weatherpanel">
                         <h3>City</h3>
@@ -51,15 +40,14 @@
                         <p class="humidity"></p>
                         <p class="wind"></p>
                         <p id=indexUV>UV Index: </p> <p class="uv">74</p>
-                            
-                        
                     </div>
                 </section>
             </section>
             <section class="row">
+                  <!----- Search box ----------->
                 <section id="searchbox" class="col-md-3">
                 </section>
-
+                  <!---- 5 Day Forecast Title -------->
                 <section id="5daytitle" class="col-md-8">
                 <h4>5-Day Forecast:</h4>
                 </section>
@@ -70,38 +58,35 @@
                 </section>
 
                 <section class="col-md-9">
+                    <!-----First Box------->
                     <div class="box">
                         <p class="date">Date</p>
                         <p class="tempF">Temp</p>
                         <p class="humF">Humidity</p>
                     </div>
-             
 
-             
+                    <!-----Second Box------->
                     <div class="box">
                         <p class="date">Date</p>
                         <p class="tempF">Temp</p>
                         <p class="humF">Humidity</p>
                     </div>
            
-
-               
+                     <!-----Third Box------->
                     <div class="box">
                         <p class="date">Date</p>
                         <p class="tempF">Temp</p>
                         <p class="humF">Humidity</p>
                     </div>
-               
 
-                
+                    <!-----Fourth Box------->
                     <div class="box">
                         <p class="date">Date</p>
                         <p class="tempF">Temp</p>
                         <p class="humF">Humidity</p>
                     </div>
-                
 
-              
+                    <!-----Fifth Box------->
                     <div class="box">
                         <p class="date">Date</p>
                         <p class="tempF">Temp</p>
@@ -111,14 +96,7 @@
 
             </section>
 
-            
-            
-
-
-
-
         </section>
-      
 
     </main>
 
