@@ -4,7 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Weather Dashboard</title>
   </head>
@@ -17,7 +30,6 @@
         <section>
             <section class="row">
                 <section id="searchbox" class="col-md-3">
-                    <!-- Search Bar -->
                     <h4>Search for a City</h4>
                     <div id="search" class="input-group input-group-sm mb-3">
                         <input id="city" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
@@ -26,20 +38,23 @@
 
                     <div>
                         <div id="allcities">
+                          <!-- <button class="cityB">kansas</button> -->
                         </div>
+
                     </div>
                 </section>
-                <!-- Main Weather Panel -->
+
                 <section class="col-md-8">
                     <div class="weatherpanel">
                         <h3>City</h3>
                         <p class="temp"></p>
                         <p class="humidity"></p>
                         <p class="wind"></p>
-                        <p id=indexUV>UV Index: </p> <p class="uv">74</p>    
+                        <p id=indexUV>UV Index: </p> <p class="uv">74</p>
+                            
+                        
                     </div>
                 </section>
-
             </section>
             <section class="row">
                 <section id="searchbox" class="col-md-3">
@@ -49,7 +64,7 @@
                 <h4>5-Day Forecast:</h4>
                 </section>
             </section>
-            <!-- 5 Day Forecast Section -->
+
             <section id="forecast" class="row">
                 <section id="searchbox" class="col-md-3">
                 </section>
@@ -61,17 +76,23 @@
                         <p class="humF">Humidity</p>
                     </div>
              
+
+             
                     <div class="box">
                         <p class="date">Date</p>
                         <p class="tempF">Temp</p>
                         <p class="humF">Humidity</p>
                     </div>
            
+
+               
                     <div class="box">
                         <p class="date">Date</p>
                         <p class="tempF">Temp</p>
                         <p class="humF">Humidity</p>
                     </div>
+               
+
                 
                     <div class="box">
                         <p class="date">Date</p>
@@ -79,14 +100,26 @@
                         <p class="humF">Humidity</p>
                     </div>
                 
+
+              
                     <div class="box">
                         <p class="date">Date</p>
                         <p class="tempF">Temp</p>
                         <p class="humF">Humidity</p>
                     </div>
                 </section>
+
             </section>
+
+            
+            
+
+
+
+
         </section>
+      
+
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
