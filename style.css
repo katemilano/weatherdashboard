@@ -17,28 +17,11 @@ h4{
     margin-left:30px;
 }
 
+/******Search bar *********/
+
 #searchbox{
     background: rgb(240, 240, 240);
 }
-
-.weatherpanel{
-    border: 1px solid rgb(223, 221, 221);
-    margin: 30px;
-    padding: 10px;
-}
-
-.box{
-    background: blue;
-    padding: 10px;;
-    margin: 10px;
-    width: 140px;
-    color: white;
-    float:left; 
-    height:215px;  
-    font-size: 15px;
-
-}
-
 .cityB{
     width: 100%;
     padding: 8px;
@@ -47,6 +30,13 @@ h4{
     color:  rgb(68, 68, 68);
     margin: 2px;
 
+}
+
+/******Weather Panel *********/
+.weatherpanel{
+    border: 1px solid rgb(223, 221, 221);
+    margin: 30px;
+    padding: 10px;
 }
 
 .uv{
@@ -61,6 +51,17 @@ h4{
     padding: 0;
     margin: 0;
     display: inline;
+}
 
+/******5 Day Forecast *********/
+.box{
+    background: blue;
+    padding: 10px;;
+    margin: 10px;
+    width: 140px;
+    color: white;
+    float:left; 
+    height:215px;  
+    font-size: 15px;
 
 }
