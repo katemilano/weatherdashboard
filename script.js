@@ -35,7 +35,7 @@ function sideButton(){
           localStorage.setItem("lon", response.coord.lon);
           localStorage.setItem("lat", response.coord.lat);
 
-          var queryURLIcon = "http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png";
+          var queryURLIcon = "https://openweathermap.org/img/wn/" + response.weather[0].icon + ".png";
           var icon = $("<img>");
           icon.attr("src", queryURLIcon);
           $(h3).append(icon);
@@ -45,7 +45,7 @@ function sideButton(){
     // UV INDEX
     var storedLon = localStorage.getItem("lon");
     var storedLat = localStorage.getItem("lat");
-    var queryURLUV = "http://api.openweathermap.org/data/2.5/uvi?lat=" + storedLat + "&lon=" + storedLon + "&appid=" + APIKey; 
+    var queryURLUV = "https://api.openweathermap.org/data/2.5/uvi?lat=" + storedLat + "&lon=" + storedLon + "&appid=" + APIKey; 
     $.ajax({
         url: queryURLUV,
         method: "GET"
@@ -68,13 +68,13 @@ function sideButton(){
 
         });
        
-        var queryURLIcon = "http://openweathermap.org/img/wn/10d@2x.png";
+        var queryURLIcon = "https://openweathermap.org/img/wn/10d@2x.png";
         var icon = $("<img>");
         icon.attr("src", queryURLIcon);
         $("h3").append(icon);
 
     //5-DAY Forecast
-    var queryURL5 = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityFormatted+ "&appid=" + APIKey; 
+    var queryURL5 = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityFormatted+ "&appid=" + APIKey; 
     $.ajax({
         url: queryURL5,
         method: "GET"
@@ -94,7 +94,7 @@ function sideButton(){
 
                 // weather icons
                 var icon1 = response.list[j].weather[0].icon;
-                var queryURLIcon = "http://openweathermap.org/img/wn/" + icon1 + "@2x.png";
+                var queryURLIcon = "https://openweathermap.org/img/wn/" + icon1 + "@2x.png";
                 var icon = $("<img>");
                 icon.attr("src", queryURLIcon);
                 $(dateI).append(icon);
@@ -157,7 +157,7 @@ function citySearch(){
           localStorage.setItem("lon", response.coord.lon);
           localStorage.setItem("lat", response.coord.lat);
 
-          var queryURLIcon = "http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png";
+          var queryURLIcon = "https://openweathermap.org/img/wn/" + response.weather[0].icon + ".png";
           var icon = $("<img>");
           icon.attr("src", queryURLIcon);
           $(h3).append(icon);
@@ -167,7 +167,7 @@ function citySearch(){
     // UV INDEX
     var storedLon = localStorage.getItem("lon");
     var storedLat = localStorage.getItem("lat");
-    var queryURLUV = "http://api.openweathermap.org/data/2.5/uvi?lat=" + storedLat + "&lon=" + storedLon + "&appid=" + APIKey; 
+    var queryURLUV = "https://api.openweathermap.org/data/2.5/uvi?lat=" + storedLat + "&lon=" + storedLon + "&appid=" + APIKey; 
     $.ajax({
         url: queryURLUV,
         method: "GET"
@@ -191,13 +191,13 @@ function citySearch(){
 
         });
        
-        var queryURLIcon = "http://openweathermap.org/img/wn/10d@2x.png";
+        var queryURLIcon = "https://openweathermap.org/img/wn/10d@2x.png";
         var icon = $("<img>");
         icon.attr("src", queryURLIcon);
         $("h3").append(icon);
 
     //5-DAY Forecast
-    var queryURL5 = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityFormatted+ "&appid=" + APIKey; 
+    var queryURL5 = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityFormatted+ "&appid=" + APIKey; 
     $.ajax({
         url: queryURL5,
         method: "GET"
@@ -218,7 +218,7 @@ function citySearch(){
 
                 // weather icons
                 var icon1 = response.list[j].weather[0].icon;
-                var queryURLIcon = "http://openweathermap.org/img/wn/" + icon1 + "@2x.png";
+                var queryURLIcon = "https://openweathermap.org/img/wn/" + icon1 + "@2x.png";
                 var icon = $("<img>");
                 icon.attr("src", queryURLIcon);
                 $(dateI).append(icon);
@@ -272,7 +272,7 @@ $(window).on('load',function get(){
           localStorage.setItem("lon", response.coord.lon);
           localStorage.setItem("lat", response.coord.lat);
 
-          var queryURLIcon = "http://openweathermap.org/img/wn/" + response.weather[0].icon + ".png";
+          var queryURLIcon = "https://openweathermap.org/img/wn/" + response.weather[0].icon + ".png";
           var icon = $("<img>");
           icon.attr("src", queryURLIcon);
           $(h3).append(icon);
@@ -282,7 +282,7 @@ $(window).on('load',function get(){
     // UV INDEX
     var storedLon = localStorage.getItem("lon");
     var storedLat = localStorage.getItem("lat");
-    var queryURLUV = "http://api.openweathermap.org/data/2.5/uvi?lat=" + storedLat + "&lon=" + storedLon + "&appid=" + APIKey; 
+    var queryURLUV = "https://api.openweathermap.org/data/2.5/uvi?lat=" + storedLat + "&lon=" + storedLon + "&appid=" + APIKey; 
     $.ajax({
         url: queryURLUV,
         method: "GET"
@@ -306,13 +306,13 @@ $(window).on('load',function get(){
 
         });
        
-        var queryURLIcon = "http://openweathermap.org/img/wn/10d@2x.png";
+        var queryURLIcon = "https://openweathermap.org/img/wn/10d@2x.png";
         var icon = $("<img>");
         icon.attr("src", queryURLIcon);
         $("h3").append(icon);
 
     //5-DAY Forecast
-    var queryURL5 = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityFormatted+ "&appid=" + APIKey; 
+    var queryURL5 = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityFormatted+ "&appid=" + APIKey; 
     $.ajax({
         url: queryURL5,
         method: "GET"
@@ -333,7 +333,7 @@ $(window).on('load',function get(){
 
                 // weather icons
                 var icon1 = response.list[j].weather[0].icon;
-                var queryURLIcon = "http://openweathermap.org/img/wn/" + icon1 + "@2x.png";
+                var queryURLIcon = "https://openweathermap.org/img/wn/" + icon1 + "@2x.png";
                 var icon = $("<img>");
                 icon.attr("src", queryURLIcon);
                 $(dateI).append(icon);
